@@ -1,62 +1,64 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-    "name": "BeSpunky Angular",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "dockerFile": "devcontainer.dockerfile",
+  "name": "BeSpunky Angular",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "dockerFile": "devcontainer.dockerfile",
 
-    "workspaceMount": "source=${localWorkspaceFolder},target=/bespunky,type=bind,consistency=cached",
-    "workspaceFolder": "/bespunky",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/bespunky,type=bind,consistency=cached",
+  "workspaceFolder": "/bespunky",
 
-    "mounts":
-    [
-        "source=${localWorkspaceFolderBasename}-.angular,target=${containerWorkspaceFolder}/.angular,type=volume",
-        "source=${localWorkspaceFolderBasename}-.nx,target=${containerWorkspaceFolder}/.nx,type=volume",
-        "source=${localWorkspaceFolderBasename}-dist,target=${containerWorkspaceFolder}/dist,type=volume",
-        "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
-    ],
+  "mounts":
+  [
+    "source=${localWorkspaceFolderBasename}-.angular,target=${containerWorkspaceFolder}/.angular,type=volume",
+    "source=${localWorkspaceFolderBasename}-.nx,target=${containerWorkspaceFolder}/.nx,type=volume",
+    "source=${localWorkspaceFolderBasename}-dist,target=${containerWorkspaceFolder}/dist,type=volume",
+    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
 
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "terminal.integrated.defaultProfile.linux": "bash",
-                "terminal.integrated.profiles.linux": {
-                    "bash": {
-                        "path": "bash",
-                        "args": [ "-l" ]
-                    }
-                }
-            },
-            "extensions": [
-                "dbaeumer.vscode-eslint",
-                "ms-vscode-remote.remote-containers",
-                "nrwl.angular-console",
-                "firsttris.vscode-jest-runner",
-                "Angular.ng-template",
-                "john-crowson.angular-file-changer",
-                "matthewthorning.align-vertically",
-                "nicoespeon.abracadabra",
-                "EditorConfig.EditorConfig",
-                "usernamehw.errorlens",
-                "Tobermory.es6-string-html",
-                "mkoeppen.generate-data",
-                "GitHub.copilot",
-                "GitHub.copilot-chat",
-                "eamodio.gitlens",
-                "Wscats.delete-node-modules",
-                "WallabyJs.quokka-vscode",
-                "gencer.html-slim-scss-css-class-completion",
-                "meganrogge.template-string-converter",
-                "qcz.text-power-tools",
-                "eliostruyf.vscode-typescript-exportallmodules",
-                "GitHub.vscode-github-actions",
-                "mrmlnc.vscode-scss",
-                "elltg.elltg-pattern-rename",
-                "WilliamRagstad.wr-docthis",
-                "ChFlick.firecode"
-            ]
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dev.containers.dockerCredentialHelper": true,
+        "dev.containers.gitCredentialHelperConfigLocation": "global",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "args": [ "-l" ]
+          }
         }
-    },
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-vscode-remote.remote-containers",
+        "nrwl.angular-console",
+        "firsttris.vscode-jest-runner",
+        "Angular.ng-template",
+        "john-crowson.angular-file-changer",
+        "matthewthorning.align-vertically",
+        "nicoespeon.abracadabra",
+        "EditorConfig.EditorConfig",
+        "usernamehw.errorlens",
+        "Tobermory.es6-string-html",
+        "mkoeppen.generate-data",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "eamodio.gitlens",
+        "Wscats.delete-node-modules",
+        "WallabyJs.quokka-vscode",
+        "gencer.html-slim-scss-css-class-completion",
+        "meganrogge.template-string-converter",
+        "qcz.text-power-tools",
+        "eliostruyf.vscode-typescript-exportallmodules",
+        "GitHub.vscode-github-actions",
+        "mrmlnc.vscode-scss",
+        "elltg.elltg-pattern-rename",
+        "WilliamRagstad.wr-docthis",
+        "ChFlick.firecode"
+      ]
+    }
+  },
 
-    "postCreateCommand": "yarn install"
+  "postCreateCommand": "yarn install"
 }
