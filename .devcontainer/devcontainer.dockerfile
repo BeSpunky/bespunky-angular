@@ -1,6 +1,5 @@
-FROM node:22-alpine
+FROM mcr.microsoft.com/devcontainers/typescript-node:1-22-bullseye
 
-RUN apk update && apk upgrade
-RUN apk add bash
+RUN apt-get update -y && apt-get upgrade -y
 
-RUN apk add git git-lfs
+RUN apt-get install git-lfs
