@@ -1,30 +1,30 @@
 {
-  "name": "official-site",
+  "name": "angular-google-maps",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/official-site/src",
+  "sourceRoot": "official-sites/angular-google-maps/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/official-site",
-        "browser": "apps/official-site/src/main.ts",
+        "outputPath": "dist/official-sites/angular-google-maps",
+        "browser": "official-sites/angular-google-maps/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/official-site/tsconfig.app.json",
+        "tsConfig": "official-sites/angular-google-maps/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/official-site/public"
+            "input": "official-sites/angular-google-maps/public"
           }
         ],
-        "styles": ["apps/official-site/src/styles.scss"],
-        "server": "apps/official-site/src/main.server.ts",
+        "styles": ["official-sites/angular-google-maps/src/styles.scss"],
+        "server": "official-sites/angular-google-maps/src/main.server.ts",
         "ssr": {
-          "entry": "apps/official-site/src/server.ts"
+          "entry": "official-sites/angular-google-maps/src/server.ts"
         },
         "outputMode": "server"
       },
@@ -57,10 +57,10 @@
       "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "official-site:build:production"
+          "buildTarget": "angular-google-maps-website:build:production"
         },
         "development": {
-          "buildTarget": "official-site:build:development"
+          "buildTarget": "angular-google-maps-website:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
       "options": {
-        "buildTarget": "official-site:build"
+        "buildTarget": "angular-google-maps-website:build"
       }
     },
     "lint": {
@@ -78,15 +78,15 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/official-site/jest.config.ts"
+        "jestConfig": "official-sites/angular-google-maps/jest.config.ts"
       }
     },
     "serve-static": {
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "official-site:build",
-        "staticFilePath": "dist/apps/official-site/browser",
+        "buildTarget": "angular-google-maps-website:build",
+        "staticFilePath": "dist/official-sites/angular-google-maps/browser",
         "spa": true
       }
     }

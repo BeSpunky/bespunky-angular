@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bespunky/angular-google-maps": [
+        "packages/angular-google-maps/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

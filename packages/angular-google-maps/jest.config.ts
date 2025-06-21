@@ -1,8 +1,8 @@
 export default {
-  displayName: 'official-site',
+  displayName: '@bespunky/angular-google-maps',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/official-site',
+  coverageDirectory: '../../coverage/packages/angular-google-maps',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
